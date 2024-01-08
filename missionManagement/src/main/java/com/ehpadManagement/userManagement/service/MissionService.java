@@ -38,7 +38,7 @@ public class MissionService {
 
     }
 
-    public void deleteMission(int missionId) {
+    public void deleteMission(long missionId) {
         Session session = MissionManagementApplication.sessionFactory.openSession();
         Transaction transaction = null;
 
@@ -87,7 +87,7 @@ public class MissionService {
         }
     }
 
-    public Mission getMissionById(int missionId) {
+    public Mission getMissionById(long missionId) {
         Session session = MissionManagementApplication.sessionFactory.openSession();
         Transaction transaction = null;
         Mission mission = null;
