@@ -107,9 +107,29 @@ public class MissionController {
         return adminList;
     }
 
-    @PostMapping("/getAllRealise")
-    public String
+    @PostMapping("/validate")
+    public String verifyMission(@RequestParam long missionId, @RequestParam long userId){
+        try{
+            Mission mission = missionService.getMissionById(missionId);
+            missionService.verifyMission(mission,userId);
+            return "Mission" + mission+ "validé";
 
+        } catch (Exception e){
+            System.out.println("Mission non trouvé");
+        }
+        return "Mission non trouvé";
+    }
 
+    @PostMapping("/refute")
+    public String refuteMission(@RequestParam long missionId, @RequestParam long userId, @RequestParam String motif){
+        try{
+            Mission mission = missionService.getMissionById(missionId);
+            missionService.refuteMission(mission,userId,motif);
+            return "Mission" + mission+ "refusé";
+
+        } catch (Exception e){
+            System.out.println("Mission non trouvé");
+        }
+        return "Mission non trouvé";    }
 
 }
