@@ -1,0 +1,23 @@
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+    <session-factory>
+        <!-- Configurations de la base de données -->
+        <property name="hibernate.connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://srv-bdens.insa-toulouse.fr:3306/projet_gei_054</property>
+        <property name="hibernate.connection.username">projet_gei_054</property>
+        <property name="hibernate.connection.password">AiVo6tie</property>
+
+
+        <!-- Afficher les requêtes SQL dans la console -->
+        <property name="hibernate.show_sql">true</property>
+
+
+        <!-- Création automatique des tables -->
+        <property name="hibernate.hbm2ddl.auto">update</property>
+
+        <!-- Scannez le package pour les classes d'entité -->
+        <mapping class="com.ehpadManagement.userManagement.model.Mission"/>
+    </session-factory>
+</hibernate-configuration>
